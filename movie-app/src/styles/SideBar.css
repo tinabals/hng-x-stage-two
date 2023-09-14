@@ -1,0 +1,51 @@
+/* styles/SideBar.css */
+
+nav {
+    background-color: #a79898;
+    color: #fff;
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    transition: 0.3s;
+    padding-top: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px 15px;
+    transition: 0.2s;
+  }
+  
+  li:first-child {
+    background-color: #555;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+    font-weight: bold;
+  }
+  
+  .about-log {
+    display: block;
+    background-color: #ff5722;
+    padding: 10px 15px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s;
+  }
+  
+  .about-log:hover {
+    background-color: #f44336;
+    color: #fff;
+  }
+  

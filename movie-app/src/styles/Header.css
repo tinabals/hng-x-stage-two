@@ -1,0 +1,105 @@
+header{
+  background: url('../assets/images/Poster.png');
+background-size: cover;
+color:white;
+padding:20px 60px;
+}
+.logo-img img {
+  max-width: 100%; 
+}
+.header-section{
+  display:flex;
+  justify-content: space-between;
+  
+}
+.search-bar{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  width:80%;
+  color:white;
+ 
+
+}
+.search-bar input{
+  border: 2px solid white; 
+  border-radius: 5px;
+  padding: 10px 18px; 
+  background-color: transparent; 
+  color: white;
+  width: 38%;
+  position: relative;
+
+}
+
+.search-bar input[type="text"]::placeholder {
+  color: white; 
+  opacity: 0.7;
+}
+
+.fa-search{
+position: absolute;
+right: 552px;
+}
+
+.nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+font-weight: 700;
+    width:10%
+}
+
+.collapse-bar{
+  margin-left:15px;
+}
+
+
+.header-text{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  gap: 20px;
+  align-items: flex-start;
+  margin:68px 0;
+}
+
+.movie-header-title{
+  display: flex;
+  flex-direction: column;
+  font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: 56px
+}
+
+
+.rating{
+  display: flex;
+  gap:20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating span{
+  display: flex;
+  align-items: center;
+  gap:5px;
+}
+.movie-description{
+  font-size: 14px;
+  width:310px;
+font-weight: 500;
+line-height: 18px;
+}
+
+.play-button{
+  background-color: #881337;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
