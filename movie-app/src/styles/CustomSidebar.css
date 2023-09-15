@@ -1,0 +1,48 @@
+.custom-sidebar {
+  background-color: #E5E5E5;
+  color: #fff;
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  transition: 0.3s;
+  padding-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px 15px;
+  transition: 0.2s;
+}
+
+li:first-child {
+  background-color: #555;
+}
+
+.custom-active {
+  background-color: #af4caa;
+  font-weight: bold;
+}
+
+.custom-logout {
+  display: block;
+  background-color: #ff22ed;
+  padding: 10px 15px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+
+.custom-logout:hover {
+  background-color: #8836f4;
+  color: #fff;
+}

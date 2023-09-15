@@ -4,45 +4,56 @@ import { Link } from 'react-router-dom';
 
 const MovieCard = ({ movie }) => {
   const [isLiked, setIsLiked] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const toggleLike = () => {
     setIsLiked(!isLiked);
   };
 
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
   return (
     <div className={`movie-card-container${isLiked ? ' liked' : ''}`}>
-    <div className='movie-card'>
-    <div className='movie-poster-container'>
-    <Link to={`/movies/${movie.id}`}>
-    <img
-              className='movie-image'
-              src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-              alt={movie.title}
-              data-testid='movie-poster'
-            />
-            </Link>
-          </div>
-          <div className='movie-details'>
-            <p className='movie-title' data-testid='movie-title'>
-              {movie.title}
-            </p>
-            <p className='movie-release-date' data-testid='movie-release-date'>
-              {movie.release_date}
-            </p>
-            <p className='rating' data-testid='movie-rating'>{movie.vote_average}</p>
-            <span className='genre'>Action, Adventure, Horror</span>
-          </div>
-          <div
-            className={`love-icon${isLiked ? ' liked' : ''}`}
-            onClick={toggleLike}
-          >
-            <i
-              className={`fa fa-heart`}
-              style={{ fontSize: '38px', color: isLiked ? 'black' : 'red' }}
-            ></i>
-          </div>
+      <div className='movie-card'>
+        <div className='movie-poster-container'>
+          <Link to={`/movies/${movie.id}`}>
+            {imageError ? (
+              <div className='image-error'>Image not available</div>
+            ) : (
+              <img
+                className='movie-image'
+                src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                alt={movie.title}
+                data-testid='movie-poster'
+                onError={handleImageError} // Handle image loading error
+              />
+            )}
+          </Link>
         </div>
-     
+        <div className='movie-details'>
+          <p className='movie-title' data-testid='movie-title'>
+            {movie.title}
+          </p>
+          <p className='movie-release-date' data-testid='movie-release-date'>
+            {movie.release_date}
+          </p>
+          <p className='rating' data-testid='movie-rating'>
+            {movie.vote_average}
+          </p>
+          <span className='genre'>Action, Adventure, Horror</span>
+        </div>
+        <div
+          className={`love-icon${isLiked ? ' liked' : ''}`}
+          onClick={toggleLike}
+        >
+          <i
+            className={`fa fa-heart`}
+            style={{ fontSize: '38px', color: isLiked ? 'black' : 'red' }}
+          ></i>
+        </div>
+      </div>
     </div>
   );
 };

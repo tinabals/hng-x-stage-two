@@ -1,7 +1,7 @@
 import '../styles/MovieDetails.css';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import SideBar from './SideBar.js';
+import SideBar from './CustomSidebar.js';
 import axios from 'axios';
 
 const MovieDetails = () => {
@@ -40,48 +40,47 @@ const MovieDetails = () => {
     <div className="movie-details-container ">
       <SideBar />
       {loading ? (
-        <div className='load-center'>
-          loading
+        <div className='custom-load-center'>
+          Loading...
         </div>
       ) : error ? (
-        <div className='about-content error-message'>{error}</div>
+        <div className='custom-about-content custom-error-message'>{error}</div>
       ) : (
         <>
-         
-          <div className='about-content'>
-            <div className='about-screen'>
+          <div className='custom-about-content'>
+            <div className='custom-about-screen'>
               <img alt='about-screen' src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} />
-              <div className='about-play'>
+              <div className='custom-about-play'>
                 <p>Watch Trailer</p>
               </div>
             </div>
-            <div className='about-details'>
-              <div className='ab-heading'>
+            <div className='custom-about-details'>
+              <div className='custom-ab-heading'>
                 <h3 data-testid='movie-title'>{movie.original_title}</h3>
                 <ul>
                   <li data-testid='movie-release-date'>{movie.release_date}</li>
-                  <li data-testid='movie-runtime'>{movie.runtime}</li>
+                  <li data-testid='movie-runtime'>{movie.runtime} mins</li>
                 </ul>
                 <p>Action</p>
                 <p>Drama</p>
               </div>
             </div>
-            <div className='about-data'>
-              <div className='left'>
-                <div className='deta'>
+            <div className='custom-about-data'>
+              <div className='custom-left'>
+                <div className='custom-deta'>
                   <p data-testid='movie-overview'>{movie.overview}</p>
                 </div>
-                <div className='director'>
+                <div className='custom-director'>
                   <p>Director: <span>Joseph Kranacki</span></p>
                 </div>
-                <div className='director'>
-                  <p>Writer: <span>Joseph Kranacki, Zack sylder, Peter craig.</span></p>
+                <div className='custom-director'>
+                  <p>Writers: <span>Joseph Kranacki, Zack Snyder, Peter Craig</span></p>
                 </div>
-                <div className='director'>
-                  <p>Stars: <span>Tom cruise, Jennifer lopez, Miles Teller.</span></p>
+                <div className='custom-director'>
+                  <p>Stars: <span>Tom Cruise, Jennifer Lopez, Miles Teller</span></p>
                 </div>
-                <div className='top-rated'>
-                  <button>Top rated movie #65</button>
+                <div className='custom-top-rated'>
+                  <button>Top Rated Movie #65</button>
                 </div>
               </div>
             </div>
