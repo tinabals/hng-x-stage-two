@@ -41,7 +41,7 @@ const Featured = () => {
       </div>
       <div className="movie-grid">
         {loading ? (
-          <p className='spinner'><i class="fa-solid fa-spinner"></i></p>
+          <p className='spinner'><i class="fa fa-spinner"></i></p>
         ) : (
           movieData.map(movie => (
             <MovieCard movie={movie} key={movie.id} />
